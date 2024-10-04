@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorando Tecnologias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="imagens/favicon-32x32.png" type="img_js">
+    <style>
+       body {
+            font-family: 'Bebas Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo para o vídeo de fundo */
+        .bg-video {
+            position: fixed; /* Posiciona o vídeo como fundo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cobre toda a tela */
+            z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+        }
+
+        header {
+            background-color: rgba(179, 45, 54, 0.8); /* Vermelho com opacidade */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: rgba(51, 51, 51, 0.8); /* Cinza Escuro com opacidade */
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: #F3A300; /* Amarelo */
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            position: relative; /* Permite que as seções usem z-index */
+            z-index: 1; /* Coloca o conteúdo acima do vídeo */
+        }
+        .research-section {
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com opacidade */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #1B7F3A; /* Verde */
+        }
+        h3 {
+            color: #006A8E; /* Azul */
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+        <source src="videos/vid-fundo.mp4" type="video/mp4">
+    </video>
+<header>
+    <h1>PesquisaWeb: Explorando Tecnologias</h1>
+</header>
+
+<nav>
+    <a href="index.html"target="_blank" rel="noopener noreferrer">Assincronismo</a>  
+    <a href="index2.html"target="_blank" rel="noopener noreferrer">Fundamentos Avançados de JavaScript e Introdução ao Clojure</a>
+</nav>
+
+<div class="container">
+
+    <!-- Seção de pesquisa sobre Assincronismo -->
+    <div class="research-section" id="assincronismo">
+        <h2>Assincronismo</h2>
+        <p>Assincronismo em JavaScript permite que o código execute operações sem bloquear o fluxo principal da aplicação, melhorando a performance em tarefas demoradas, como chamadas a APIs, leitura de arquivos ou requisições de rede. Ele é baseado no conceito de event loop, que gerencia a execução de tarefas assíncronas enquanto outras partes do código continuam sendo processadas.
+        </p>
+
+        <h3>AJAX (Asynchronous Javascript And XML)</h3>
+        <p>
+            AJAX (Asynchronous JavaScript and XML) é uma técnica que permite atualizar partes específicas de uma página web de forma assíncrona, sem precisar recarregar a página inteira. Ele funciona enviando uma solicitação ao servidor (usando o objeto XMLHttpRequest ou a fetch API) e, após receber a resposta, atualiza dinamicamente o conteúdo da página.
+
+Exemplos de uso:
+Formulários: Enviar e validar dados sem recarregar a página.
+Carregamento dinâmico: Atualizar listas de produtos ou comentários sem nova carga da página.
+O formato JSON é o mais usado para troca de dados, embora o nome mencione XML.
+        </p>
+
+        <h3>Promises</h3>
+        <p>Promises em JavaScript são usadas para gerenciar operações assíncronas, representando um valor que pode estar disponível no futuro. Elas ajudam a evitar o "callback hell" e tornam o código mais organizado.
+
+            Principais conceitos:
+            Uma Promise pode estar em três estados:
+            Pending (pendente): A operação ainda não terminou.
+            Fulfilled (resolvida): A operação foi concluída com sucesso.
+            Rejected (rejeitada): A operação falhou.
+            Métodos importantes:
+            .then(): Executa uma função quando a Promise é resolvida com sucesso.
+            .catch(): Lida com erros quando a Promise é rejeitada.
+            .finally(): Executa uma função depois que a Promise termina, independente do resultado.
+            Promises são úteis para trabalhar com tarefas como requisições HTTP ou leitura de arquivos, tornando o código mais fácil de entender e manter.
+            </p>
+
+        <h3>Async/Await</h3>
+        <p>Async/Await simplifica o trabalho com código assíncrono em JavaScript:
+
+            async: Define uma função assíncrona, que retorna uma Promise.
+            await: Pausa a execução da função até que a Promise seja resolvida ou rejeitada, tornando o código mais legível.
+            Isso evita o uso excessivo de .then() e facilita o tratamento de erros com try/catch, tornando o código mais simples e organizado.</p>
+
+        <h3>fetch API</h3>
+        <p>A fetch API é uma interface moderna do JavaScript para realizar requisições HTTP de maneira assíncrona. Ela substitui o antigo XMLHttpRequest e oferece uma sintaxe mais simples e intuitiva para trabalhar com chamadas de rede.
+
+            Principais características:
+            Usa Promises para lidar com requisições e respostas.
+            Suporta operações como GET, POST, e outros métodos HTTP.
+            Retorna os dados em diversos formatos, como JSON e texto.
+            A fetch API é amplamente usada para acessar e manipular recursos em servidores web, como APIs REST.</p>
+
+        <h3>Quais vantagens/desvantagens de usar cada uma das opções acima?
+
+        </h3>
+        <p>Promises
+            Vantagens:
+            Melhoram o fluxo assíncrono em comparação com callbacks (evitam o "callback hell").
+            Flexibilidade para encadear várias operações com .then() e .catch().
+            Desvantagens:
+            Encadeamento excessivo de .then() pode tornar o código difícil de ler se houver muitas operações.
+            Tratamento de erros pode se tornar confuso em alguns casos mais complexos.
+
+            Async/Await
+            Vantagens:
+            Torna o código assíncrono mais legível e próximo do código síncrono.
+            Simples tratamento de erros com try/catch, facilitando a depuração.
+            Facilita o encadeamento de operações assíncronas sem precisar de muitos .then().
+            Desvantagens:
+            Pode dificultar o uso de várias operações assíncronas concorrentes (para isso, é necessário o uso de Promise.all ou similar).
+            Funciona apenas em funções assíncronas (async), o que requer cuidado ao misturar com código síncrono.
+            
+            fetch API
+            Vantagens:
+            Simplicidade e facilidade de uso em comparação ao XMLHttpRequest.
+            Retorna Promises, integrando-se bem com async/await.
+            Suporte nativo a JSON e outros formatos, simplificando o tratamento de dados da resposta.
+            Desvantagens:
+            Não lida automaticamente com erros de rede (é necessário verificar manualmente se o status da resposta é bem-sucedido).
+            Falta suporte direto para rastreamento de progresso de uploads/downloads, o que XMLHttpRequest pode fazer.
+            Não tem suporte nativo para algumas funcionalidades avançadas, como reenvio de requisições com cookies ou autenticação automaticamente.
+
+            Conclusão:
+            Promises: São uma boa escolha para trabalhar com assincronismo, mas podem resultar em código difícil de ler se não forem usadas corretamente.
+            Async/Await: Oferecem uma maneira mais clara e organizada de lidar com assincronismo, especialmente em operações sequenciais, mas precisam de cuidados com tarefas concorrentes.
+            fetch API: Simples e moderna para fazer requisições HTTP, mas exige verificação manual de erros e não possui suporte a algumas funcionalidades avançadas.</p>
+    </div>
+</div>
+
+</body>
+</html>
